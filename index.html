@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>muhrizki1996.github.io</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class='card-wrapper'>
+        <div class='card' data-toggle-class='flipped'>
+            <div class='card-front'>
+                <div class='layer'>
+                    <h1>muhrizki1996</h1>
+                    <div class='corner'></div>
+                    <div class='corner'></div>
+                    <div class='corner'></div>
+                    <div class='corner'></div>
+                </div>
+            </div>
+            <div class='card-back'>
+                <div class='layer'>
+                    <div class='top'>
+                        <h2>Muhammad Rizki</h2>
+                    </div>
+                    <div class='bottom'>
+                        <h3>
+                            <img src="assets/img/whatsapp.png" /> <a
+                                href="https://wa.me/6285396877701">+6285396877701</a>
+                        </h3>
+                        <h3>
+                            <img src="assets/img/telegram.png" /> <a href="https://t.me/muhrizki1996">@muhrizki1996 on
+                                Telegram</a>
+                        </h3>
+                        <h3>
+                            <img src="assets/img/facebook.png" /> <a
+                                href="https://www.facebook.com/muhammadrizki1996">muhammadrizki1996</a>
+                        </h3>
+                        <h3>
+                            <img src="assets/img/gmail.png" /> <a
+                                href='mailto:kakarizki@icloud.com'>kakarizki@icloud.com</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            let card = document.getElementsByClassName('card')[0],
+                moved = 0,
+                interval;
+
+            if (!card) return;
+
+            card.addEventListener('click', function (event) {
+                clearInterval(interval);
+                card.style.transform = '';
+
+                // Do not flip the card if the user is trying to
+                // tap a link.
+                if (event.target.nodeName === 'A') {
+                    return;
+                }
+
+                let cName = card.getAttribute('data-toggle-class');
+                let toggled = card.classList.contains(cName);
+                card.classList[toggled ? 'remove' : 'add'](cName);
+            });
+
+            interval = setInterval(function () {
+                moved = moved ? 0 : 10;
+                card.style.transform = 'translateY(' + moved + 'px)';
+            }, 1500);
+        })();
+
+    </script>
+</body>
+
+</html>
